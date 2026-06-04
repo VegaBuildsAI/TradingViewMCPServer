@@ -2161,8 +2161,7 @@ class FunctionSignatureDB:
             return_type=DataType.STRUCT,
             version=6,
             description="Define custom type (User-Defined Type/UDT) - v6+. Create instances with .new() method.",
-            examples=[
-                """type pivotPoint
+            examples=["""type pivotPoint
     int x
     float y
     string xloc = xloc.bar_time
@@ -2170,8 +2169,7 @@ class FunctionSignatureDB:
 // Create instance
 foundPoint = pivotPoint.new()
 foundPoint = pivotPoint.new(time, high)
-foundPoint = pivotPoint.new(x = time, y = high)"""
-            ],
+foundPoint = pivotPoint.new(x = time, y = high)"""],
         )
 
         self.functions["enum"] = FunctionSignature(
@@ -2184,8 +2182,7 @@ foundPoint = pivotPoint.new(x = time, y = high)"""
             return_type=DataType.ENUM,
             version=6,
             description="Define enumeration type - v6+. Fields can have optional titles.",
-            examples=[
-                """enum Signal
+            examples=["""enum Signal
     buy = "Buy signal"
     sell = "Sell signal"
     neutral
@@ -2193,8 +2190,7 @@ foundPoint = pivotPoint.new(x = time, y = high)"""
 // Usage
 var Signal currentSignal = Signal.neutral
 if close > open
-    currentSignal := Signal.buy"""
-            ],
+    currentSignal := Signal.buy"""],
         )
 
     def get_function(self, name: str) -> Optional[FunctionSignature]:
